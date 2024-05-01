@@ -4,16 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx @11ty/eleventy --serve",
-    "dev": "npx @11ty/eleventy --serve",
-    "serve": "npx @11ty/eleventy --serve",
-    "watch": "npx @11ty/eleventy --watch",
-    "build": "npx @11ty/eleventy",
-    "clean": "del-cli _site"
+    "build": "make build",
+    "clean": "make clean",
+    "dev": "make dev",
+    "purge": "make purge",
+    "report": "make report",
+    "setup": "make setup",
+    "serve": "make serve",
+    "start": "make start",
+    "watch": "make watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.0",
