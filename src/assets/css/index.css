@@ -18,3 +18,9 @@
     @apply underline;
   }
 }
+/** This is used to ensure that we don't see unstyled content before
+  * alpine and friends load!
+*/
+[x-cloak] {
+  display: none !important;
+}
