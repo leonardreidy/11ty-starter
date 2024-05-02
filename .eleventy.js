@@ -4,6 +4,8 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const EleventyVitePlugin = require("@11ty/eleventy-plugin-vite");
 const Image = require("@11ty/eleventy-img");
 const yaml = require("js-yaml"); // Because yaml is nicer than json for editors
+// const tailwindCssForms = require('@tailwindcss/forms');
+
 require('dotenv').config();
 
 const baseUrl = process.env.BASE_URL || "http://localhost:8999";
@@ -19,11 +21,11 @@ const globalSiteData = {
 module.exports = function(eleventyConfig) {
 
   /* --- GLOBAL DATA --- */
-  
+
   eleventyConfig.addGlobalData("site", globalSiteData);
 
   /* --- YAML SUPPORT --- */
-  
+
   eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", contents => yaml.load(contents));
 
@@ -38,6 +40,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss); // just includes absolute url helper function
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   eleventyConfig.addPlugin(EleventyVitePlugin, {});
+  //
 
   /* --- SHORTCODES --- */
 
